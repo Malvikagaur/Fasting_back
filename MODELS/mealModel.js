@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Schema, model } = mongoose;
 
 /**
  * Meal Schema to track user's meal intake.
@@ -13,4 +14,4 @@ const MealSchema = new Schema(
   { timestamps: true }
 );
 
-export default model('Meal', MealSchema);
+module.exports = model('Meal', MealSchema);

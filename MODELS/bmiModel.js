@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Schema, model } = mongoose;
 
 /**
  * BMI Schema to track user's height, weight, and calculated BMI.
@@ -13,4 +14,5 @@ const BmiSchema = new Schema(
   { timestamps: true }
 );
 
-export default model('BMI', BmiSchema);
+
+module.exports = model('BMI', BmiSchema);

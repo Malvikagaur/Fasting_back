@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Schema, model } = mongoose;
 
 /**
  * Goal Schema to track user's custom fitness or fasting goals.
@@ -13,4 +14,4 @@ const GoalSchema = new Schema(
   { timestamps: true }
 );
 
-export default model('Goal', GoalSchema);
+module.exports = model('Goal', GoalSchema);

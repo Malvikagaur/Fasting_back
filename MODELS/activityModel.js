@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Schema, model } = mongoose;
 
 /**
  * Activity Schema to track user's physical activities.
@@ -13,4 +14,4 @@ const ActivitySchema = new Schema(
   { timestamps: true }
 );
 
-export default model('Activity', ActivitySchema);
+module.exports = model('Activity', ActivitySchema);

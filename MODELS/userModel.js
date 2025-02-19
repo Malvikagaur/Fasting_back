@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
-import { genSalt, hash } from 'bcryptjs';
+const { genSalt, hash } = require('bcryptjs');
+const { Schema } = mongoose;
 
 /**
  * User Schema to store user details and authentication credentials.
  */
-const UserSchema = new Schema(
+const UserSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
@@ -12,6 +13,8 @@ const UserSchema = new Schema(
   },
   { timestamps: true }
 );
+
+
 
 /**
  * Hash password before saving the user model.
@@ -24,4 +27,5 @@ UserSchema.pre('save', async function (next) {
   next();
 });
 
-export default model('User', UserSchema);
+module.exports = model('User', UserSchema);
+

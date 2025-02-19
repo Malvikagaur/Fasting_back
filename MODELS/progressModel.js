@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Schema, model } = mongoose;
 
 /**
  * Progress Schema to track user progress over time.
@@ -13,4 +14,4 @@ const ProgressSchema = new Schema(
   { timestamps: true }
 );
 
-export default model('Progress', ProgressSchema);
+module.exports = model('Progress', ProgressSchema);

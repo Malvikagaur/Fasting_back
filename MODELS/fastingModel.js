@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const { Schema, model } = mongoose;
 /**
  * Fasting Schema to store user's intermittent fasting records.
  */
@@ -12,4 +12,4 @@ const FastingSchema = new Schema(
   { timestamps: true }
 );
 
-export default model('Fasting', FastingSchema);
+module.exports = model('Fasting', FastingSchema);
