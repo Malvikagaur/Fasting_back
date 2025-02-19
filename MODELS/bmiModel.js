@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require('mongoose');
 
 /**
  * BMI Schema to track user's height, weight, and calculated BMI.

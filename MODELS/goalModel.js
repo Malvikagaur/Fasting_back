@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require('mongoose');
 
 /**
  * Goal Schema to track user's custom fitness or fasting goals.

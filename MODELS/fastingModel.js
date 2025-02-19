@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require('mongoose');
 
 /**
  * Fasting Schema to store user's intermittent fasting records.

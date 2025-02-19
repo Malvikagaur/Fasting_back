@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require('mongoose');
 
 /**
  * Meal Schema to track user's meal intake.

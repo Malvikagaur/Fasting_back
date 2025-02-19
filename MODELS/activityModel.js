@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require('mongoose');
 
 /**
  * Activity Schema to track user's physical activities.
