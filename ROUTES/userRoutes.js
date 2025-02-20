@@ -1,14 +1,13 @@
 const express = require('express');
-const router = express.Router();
-const { getUserProfile, updateUserProfile } = require('../CONTROLLERS/userController');
+const { getUserProfile, updateUserProfile, updateUser } = require('../controllers/userController');
 const authMiddleware = require('../MIDDLEWARE/authMiddleware');
+const adminMiddleware = require('../middleware/adminMiddleware'); // Ensure admin check
 
-/**
- * User Routes:
- * - Get User Profile
- * - Update User Profile
- */
+const router = express.Router();
+
 router.get('/profile', authMiddleware, getUserProfile);
 router.put('/profile', authMiddleware, updateUserProfile);
+router.put('/:id', authMiddleware, adminMiddleware, updateUser); // Admin-only route
 
 module.exports = router;
+

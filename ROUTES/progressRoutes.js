@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { logProgress, getProgress } = require('../CONTROLLERS/progressController');
+const { addProgress, getProgress } = require('../CONTROLLERS/progressController');
 const authMiddleware = require('../MIDDLEWARE/authMiddleware');
 
 /**
@@ -8,7 +8,7 @@ const authMiddleware = require('../MIDDLEWARE/authMiddleware');
  * - Log Progress
  * - Get Progress History
  */
-router.post('/log', authMiddleware, logProgress);
+router.post('/log', authMiddleware, addProgress);
 router.get('/history', authMiddleware, getProgress);
 
 module.exports = router;

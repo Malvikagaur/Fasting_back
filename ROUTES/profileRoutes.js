@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getProfile, updateProfile } = require('../CONTROLLERS/userController');
+const { getUserProfile, updateUserProfile } = require('../controllers/userController');
 const authMiddleware = require('../MIDDLEWARE/authMiddleware');
 
 /**
@@ -8,7 +8,7 @@ const authMiddleware = require('../MIDDLEWARE/authMiddleware');
  * - Get Profile Details
  * - Update Profile Information
  */
-router.get('/', authMiddleware, getProfile);
-router.put('/', authMiddleware, updateProfile);
+router.get('/', authMiddleware, getUserProfile);
+router.put('/', authMiddleware, updateUserProfile);
 
 module.exports = router;

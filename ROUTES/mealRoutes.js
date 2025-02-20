@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { logMeal, getMeals } = require('../CONTROLLERS/mealController');
+const { addMeal, getMeals } = require('../CONTROLLERS/mealController');
 const authMiddleware = require('../MIDDLEWARE/authMiddleware');
 
 /**
@@ -8,7 +8,7 @@ const authMiddleware = require('../MIDDLEWARE/authMiddleware');
  * - Log a Meal
  * - Get Meal History
  */
-router.post('/log', authMiddleware, logMeal);
+router.post('/log', authMiddleware, addMeal);
 router.get('/history', authMiddleware, getMeals);
 
 module.exports = router;
